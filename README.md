@@ -1,16 +1,10 @@
 # house_price_prediction
 This project demonstrates a machine learning approach to predict house prices using a Random Forest Regressor. The goal is to build a model that accurately predicts house prices based on features such as location, size, amenities, etc
 
-The project is structured as follows:
+This project utilizes a scikit-learn Pipeline to automate the process of predicting house prices using a Random Forest Regressor. The Pipeline combines data preprocessing steps and model training into a single workflow, ensuring consistency and efficiency in handling the data and training the model.
 
-Data Preprocessing:
-   Removing categorical features columns that have unique value in validation data but not in training data.
-   Missing values in numerical features are imputed using a constant value.
-   Missing values in categorical features are imputed with the most frequent value and then encoded using one-hot encoding.
-Modeling:
-   Pipeline integrates data preprocessing steps and model training, ensuring consistency and efficiency in handling the data 
-   and training the model.
-   A Random Forest Regressor from scikit-learn is used for predicting house prices.
-   Hyperparameters of the model can be adjusted for optimization.
-Evaluation:
-  Mean Absolute Error (MAE) is used as the evaluation metric to assess model performance.
+Categorical columns having unique value present in validation data and absent in test data are removed to reduce error.Numerical features are imputed using a constant value.Categorical features are imputed with the most frequent value and then encoded using one-hot encoding.
+
+The pipeline begins with data preprocessing, where missing values in numerical features are filled with a constant value, and missing categorical values are imputed with the most frequent value before encoding using one-hot encoding. This ensures that the dataset is clean and ready for training. Following preprocessing, the pipeline integrates a Random Forest Regressor model. This ensemble learning technique leverages multiple decision trees to predict house prices based on various features such as size, location, and amenities. Hyperparameters of the model, such as the number of trees (n_estimators) and tree depth (max_depth), can be adjusted for optimal performance.
+
+Once the model is trained using the pipeline, evaluation metrics such as Mean Absolute Error (MAE) are used to assess its performance in predicting house prices accurately. MAE measures the average absolute difference between predicted and actual prices, providing insights into the model's predictive accuracy. The Pipeline approach not only automates and simplifies the workflow but also enhances reproducibility by ensuring that all preprocessing steps and model training are applied consistently from training to prediction.
